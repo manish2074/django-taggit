@@ -114,7 +114,7 @@ class ItemBase(models.Model):
 
 class TaggedItemBase(ItemBase):
     tag = models.ForeignKey(
-        Tag, related_name="%(app_label)s_%(class)s_items", on_delete=models.CASCADE
+        Tag, on_delete=models.CASCADE, related_name="%(app_label)s_%(class)s_items",
     )
 
     class Meta:
